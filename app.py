@@ -3,10 +3,10 @@ import numpy as np
 import pandas as pd
 import joblib
 from sklearn.preprocessing import StandardScaler
-#Pipeline
-pipeline = joblib.load("PIPELINE_RF.joblib")
+
 #Model
-model = joblib.load("MODEL_RF.joblib")
+model = joblib.load("lr_model.joblib")
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -34,9 +34,7 @@ def result():
     array = ['fixed_acidity' , 'volatile_acidity' , 'citric_acid' , 'residual_sugar' , 'chlorides' , 'free_sulfur_dioxide' , 'total_sulfur_dioxide' , 'density' , 'pH' , 'sulphates' , 'alcohol']
     x = np.array([[fixed_acidity , volatile_acidity , citric_acid , residual_sugar , chlorides , free_sulfur_dioxide , total_sulfur_dioxide , density , pH , sulphates , alcohol]])
     
-    
-    X = pipeline.transform(x)
-    pred = model.predict(X)[0]
+    pred = model.predict(x)[0]
     if(pred == 1): 
         pred = "Good Quality"
     else:
