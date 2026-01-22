@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .result-box {
+            background: #ffffff;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: clamp(20px, 5vw, 26px);
+        }
+
+        p {
+            font-size: clamp(15px, 4vw, 18px);
+            color: #333;
+            margin: 8px 0;
+        }
+
+        .prediction {
+            font-size: clamp(22px, 6vw, 28px);
+            font-weight: bold;
+            color: #2a5298;
+            margin: 12px 0;
+        }
+
+        .accuracy {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2a5298;
+            font-size: clamp(14px, 4vw, 16px);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            max-width: 220px;
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            background: #1e3c72;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #16305a;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-box">
+    <h2>Prediction Result</h2>
+
+    <p>🍷 Predicted Wine Quality:</p>
+    <div class="prediction">{{prediction}}</div>
+
+    <div class="accuracy">
+        Model Accuracy: 75%
+    </div>
+
+    <a href="/">
+        <button type="button">Go Back</button>
+    </a>
+</div>
+
+</body>
+</html>
